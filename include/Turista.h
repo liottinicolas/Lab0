@@ -13,7 +13,6 @@ private:
     std::string nombre;
     std::string email;
     
-    // Relación "Participa en"
     std::set<Experiencia*> experiencias;
 
 public:

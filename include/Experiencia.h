@@ -15,13 +15,12 @@ private:
     int precioBase;
     DTFecha fecha;
     
-    // Relación bidireccional "Participa en"
     std::set<Turista*> turistas;
 
 public:
     virtual DTExpe getDT();
-    virtual float calcularCosto() = 0; // Método abstracto (en cursiva en UML)
-    virtual ~Experiencia() = default;
+    virtual float calcularCosto() = 0;
+    virtual ~Experiencia();
 };
 
 #endif
