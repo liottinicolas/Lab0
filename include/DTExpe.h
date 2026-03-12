@@ -4,6 +4,7 @@
 #include <string>
 #include <set>
 #include "DTFecha.h"
+#include <ostream>
 
 class DTExpe {
 private:
