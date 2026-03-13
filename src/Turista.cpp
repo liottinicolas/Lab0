@@ -41,23 +41,25 @@ Class Turista(
                 this->participa.push_front(exp);
             }else{
                 list<Experiencia*>::iterator aux_experiencia = this->participa.begin();
-                while(aux_experiencia != this->participa.end() && experiencia_agregar.getFecha()<=(**aux_experiencia).getFecha()){
+                while(aux_experiencia != this->participa.end() && experiencia_agregar.getFecha()<=(*aux_experiencia)->getFecha()){
                     ++aux_experiencia;
                 }
                 this->participa.insert(aux_experiencia,exp);
             }
         }
         String Turista::toString(){
-            String nombre_email = this->getCi()+"->"+this->getNombre()+"/"+this->getEmail();
+            String nombre_email = String(this->getCi())+"->"+String(this->getNombre())+"/"+String(this->getEmail());
             return nombre_email;
         }
-        set Turista::listarExperiencias(DTFecha desde,float min,float max){
-            set<Experiencia*> experiencias_desde;
+        set<String> Turista::listarExperiencias(DTFecha desde,float min,float max){
+            set<String> experiencias_desde;
             list<Experiencia*>::iterator aux_participa = this->participa.begin();
-            while(aux_participa != this->participa.end() && (**aux_participa).getFecha()>=desde){
-                experiencias_desde.insert(*aux_participa);
+            while(aux_participa != this->participa.end() && (*aux_participa)->getFecha()>=desde){
+                if((*aux_participa)->getPrecioBase() <= max && (*aux_participa)->getPrecioBase() >= min){
+                    experiencias_desde.insert((*aux_participa)->getCodigoReserva());
+                }
                 ++aux_participa;
             }
-            return set;
+            return experiencias_desde;
         }
 }
