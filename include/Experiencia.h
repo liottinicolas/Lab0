@@ -10,26 +10,39 @@ class Turista;
 
 class Experiencia {
 private:
-    // Attributes
-    std::string codigoReserva;
-    std::string descripcion;
+    // Atributos
+    string codigoReserva;
+    string descripcion;
     int precioBase;
     DTFecha fecha;
     
-    // Pseudo Attributes
-    std::set<Turista*> turistas;
-    std::set<Turista*> participantes;
+    // Pseudo Atributos
+    set<Turista*> participantes;
 
 public:
-    // Getters 
-    int getCantTuristas() const;
-    int getPrecioBase() const;
-    virtual DTExpe getDT();
+    // Constructor
+    Experiencia(string codigoReserva, string descripcion, int precioBase, DTFecha fecha);
 
-    // Methods
+    // Getters
+
+    string getCodigoReserva() const;
+    string getDescripcion() const;
+    DTFecha getFecha() const;
+    int getPrecioBase() const;
+    int getCantTuristas() const;
+
+    // Setters
+    void setCodigoReserva(string codigoReserva);
+    void setDescripcion(string descripcion);
+    void setPrecioBase(int precioBase);
+    void setFecha(DTFecha fecha);
+
+    // Metodos
+    virtual DTExpe getDT();
     virtual float calcularCosto() = 0;
-    virtual ~Experiencia();
     void vincularTurista(Turista* t);
+    virtual ~Experiencia();
+    
 };
 
 #endif
