@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Turista(String ci,String nombre,String email){
+Turista::Turista(String ci,String nombre,String email){
     this->ci = ci;
     this->nombre = nombre;
     this->email = email;
