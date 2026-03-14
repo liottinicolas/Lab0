@@ -13,7 +13,7 @@ private:
     std::string nombre;
     std::string email;
     
-    std::set<Experiencia*> experiencias;
+    std::list<Experiencia*> experiencias;
 
 public:
     std::string toString();
