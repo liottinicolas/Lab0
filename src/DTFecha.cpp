@@ -1,22 +1,20 @@
 #include "DTFecha.h"
 
-#include "Fecha.h"
-
-Fecha::Fecha(int dia, int mes, int anio){
+DTFecha::DTFecha(int dia, int mes, int anio){
     this->dia = dia;
     this->mes = mes;
     this->anio = anio;
 }
-int Fecha::getDia() const{
+int DTFecha::getDia() const{
     return this->dia;
 }
-int Fecha::getMes() const{
+int DTFecha::getMes() const{
     return this->mes;
 }
-int Fecha::getAnio() const{
+int DTFecha::getAnio() const{
     return this->anio;
 }
-bool Fecha::operator<(const Fecha& fecha2) const{
+bool DTFecha::operator<(const Fecha& fecha2) const{
     bool esMenor = false;
     if(this->anio < fecha2.getAnio()){
         esMenor = true;
@@ -27,39 +25,39 @@ bool Fecha::operator<(const Fecha& fecha2) const{
     }
     return esMenor;
 }
-bool Fecha::operator>(const Fecha& fecha2) const{
+bool DTFecha::operator>(const Fecha& fecha2) const{
     bool esMayor = false;
     if(fecha2<*this /*&& fecha2.getAnio() != this->anio && fecha2.getMes() != this->mes && fecha2.getDia() != this->dia*/){
         esMayor = true;
     }
     return esMayor;
 }
-bool Fecha::operator==(const Fecha& fecha2) const{
+bool DTFecha::operator==(const Fecha& fecha2) const{
     bool sonIguales = false;
     if(fecha2.getAnio() == this->anio && fecha2.getMes() == this->mes && fecha2.getDia() == this->dia){
         sonIguales = true;
     }
     return sonIguales;
 }
-bool Fecha::operator!=(const Fecha& fecha2) const{
+bool DTFecha::operator!=(const Fecha& fecha2) const{
     bool sonDistintos = !(*this==fecha2);
     return sonDistintos;
 }
-bool Fecha::operator<=(const Fecha& fecha2) const{
+bool DTFecha::operator<=(const Fecha& fecha2) const{
     bool sonMenorIgual = false;
     if(*this<fecha2 || *this==fecha2){
         sonMenorIgual = true;
     }
     return sonMenorIgual;
 }
-bool Fecha::operator>=(const Fecha& fecha2) const{
+bool DTFecha::operator>=(const Fecha& fecha2) const{
     bool esMayorIgual = false;
     if(*this>fecha2 || *this==fecha2){
         esMayorIgual = true;
     }
     return esMayorIgual;
 }
-Fecha Fecha::avanzar(int cantDias) const{
+Fecha DTFecha::avanzar(int cantDias) const{
     Fecha fechaAvanzada(this->dia,this->mes,this->anio);
     bool terminar = false;
     fechaAvanzada.dia += cantDias;
