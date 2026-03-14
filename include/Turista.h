@@ -3,6 +3,7 @@
 
 #include <string>
 #include <set>
+#include <list>
 #include "DTFecha.h"
 
 class Experiencia;
