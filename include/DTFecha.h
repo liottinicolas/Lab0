@@ -8,13 +8,17 @@ private:
     int Anio;
 
 public:
-    // Constructor
     DTFecha(int Dia, int Mes, int Anio);
-
-    // Getters
     int getDia() const;
     int getMes() const;
     int getAnio() const;
+    bool operator<(const Fecha& fecha2) const;
+    bool operator>(const Fecha& fecha2) const;
+    bool operator==(const Fecha& fecha2) const;
+    bool operator!=(const Fecha& fecha2) const;
+    bool operator<=(const Fecha& fecha2) const;
+    bool operator>=(const Fecha& fecha2) const;
+    Fecha avanzar(int cantDias) const;
 };
 
 #endif
