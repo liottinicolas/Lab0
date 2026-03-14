@@ -1,6 +1,7 @@
 #include "Turista.h"
 #include <String>
 #include <set>
+#include <list>
 #include "DTFecha.h"
 
 using namespace std;
