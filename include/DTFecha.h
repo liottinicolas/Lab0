@@ -12,13 +12,13 @@ public:
     int getDia() const;
     int getMes() const;
     int getAnio() const;
-    bool operator<(const Fecha& fecha2) const;
-    bool operator>(const Fecha& fecha2) const;
-    bool operator==(const Fecha& fecha2) const;
-    bool operator!=(const Fecha& fecha2) const;
-    bool operator<=(const Fecha& fecha2) const;
-    bool operator>=(const Fecha& fecha2) const;
-    Fecha avanzar(int cantDias) const;
+    bool operator<(const DTFecha& fecha2) const;
+    bool operator>(const DTFecha& fecha2) const;
+    bool operator==(const DTFecha& fecha2) const;
+    bool operator!=(const DTFecha& fecha2) const;
+    bool operator<=(const DTFecha& fecha2) const;
+    bool operator>=(const DTFecha& fecha2) const;
+    DTFecha avanzar(int cantDias) const;
 };
 
 #endif

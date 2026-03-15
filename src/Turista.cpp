@@ -1,33 +1,34 @@
 #include "Turista.h"
-#include <String>
+#include <string>
 #include <set>
 #include <list>
 #include "DTFecha.h"
 
 using namespace std;
 
-Turista::Turista(String ci,String nombre,String email){
+class Experiencia;
+
+Turista::Turista(string ci,string nombre,string email){
     this->ci = ci;
     this->nombre = nombre;
     this->email = email;
-    this->participa = NULL;
 }
-String Turista::getCi(){
+string Turista::getCi(){
     return this->ci;
 }
-String Turista::getNombre(){
+string Turista::getNombre(){
     return this->nombre;
 }
-String Turista::getEmail(){
+string Turista::getEmail(){
     return this->email;
 }
-void Turista::setCi(String ci){
+void Turista::setCi(string ci){
     this->ci = ci;
 }
-void Turista::setNombre(String nombre){
+void Turista::setNombre(string nombre){
     this->nombre = nombre;
 }
-void Turista::setEmail(String email){
+void Turista::setEmail(string email){
     this->email = email;
 }
 void Turista::setParticipa(const Experiencia& experiencia_agregar){
@@ -42,12 +43,12 @@ void Turista::setParticipa(const Experiencia& experiencia_agregar){
         this->participa.insert(aux_experiencia,exp);
     }
 }
-String Turista::toString(){
-    String nombre_email = String(this->getCi())+"->"+String(this->getNombre())+"/"+String(this->getEmail());
+string Turista::toString(){
+    string nombre_email = string(this->getCi())+"->"+string(this->getNombre())+"/"+string(this->getEmail());
     return nombre_email;
 }
-set<String> Turista::listarExperiencias(DTFecha desde,float min,float max){
-    set<String> experiencias_desde;
+set<string> Turista::listarExperiencias(DTFecha desde,float min,float max){
+    set<string> experiencias_desde;
     list<Experiencia*>::iterator aux_participa = this->participa.begin();
     while(aux_participa != this->participa.end() && (*aux_participa)->getFecha()>=desde){
         if((*aux_participa)->getPrecioBase() <= max && (*aux_participa)->getPrecioBase() >= min){

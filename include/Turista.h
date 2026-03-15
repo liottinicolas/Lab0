@@ -4,7 +4,10 @@
 #include <string>
 #include <set>
 #include <list>
+#include "Experiencia.h"
 #include "DTFecha.h"
+
+using namespace std;
 
 class Experiencia;
 
@@ -13,15 +16,16 @@ private:
     std::string ci;
     std::string nombre;
     std::string email;
-    std::list<Experiencia*> experiencias;
+    std::list<Experiencia*> participa;
 
 public:
-    Turista(String ci,String nombre,String email);
-    String getCi();
-    String getNombre();
-    String getEmail();
-    void setNombre(String nombre);
-    void setEmail(String email);
+    Turista(string ci,string nombre,string email);
+    string getCi();
+    string getNombre();
+    string getEmail();
+    void setCi(string ci);
+    void setNombre(string nombre);
+    void setEmail(string email);
     void setParticipa(const Experiencia& experiencia_agregar);
     std::string toString();
     std::set<std::string> listarExperiencias(DTFecha desde, float min, float max);
