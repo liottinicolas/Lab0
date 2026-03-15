@@ -3,12 +3,12 @@
 
 class DTFecha {
 private:
-    int Dia;
-    int Mes;
-    int Anio;
+    int dia;
+    int mes;
+    int anio;
 
 public:
-    DTFecha(int Dia, int Mes, int Anio);
+    DTFecha(int dia, int mes, int anio);
     int getDia() const;
     int getMes() const;
     int getAnio() const;

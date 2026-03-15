@@ -14,7 +14,7 @@ int DTFecha::getMes() const{
 int DTFecha::getAnio() const{
     return this->anio;
 }
-bool DTFecha::operator<(const Fecha& fecha2) const{
+bool DTFecha::operator<(const DTFecha& fecha2) const{
     bool esMenor = false;
     if(this->anio < fecha2.getAnio()){
         esMenor = true;
@@ -25,40 +25,40 @@ bool DTFecha::operator<(const Fecha& fecha2) const{
     }
     return esMenor;
 }
-bool DTFecha::operator>(const Fecha& fecha2) const{
+bool DTFecha::operator>(const DTFecha& fecha2) const{
     bool esMayor = false;
     if(fecha2<*this /*&& fecha2.getAnio() != this->anio && fecha2.getMes() != this->mes && fecha2.getDia() != this->dia*/){
         esMayor = true;
     }
     return esMayor;
 }
-bool DTFecha::operator==(const Fecha& fecha2) const{
+bool DTFecha::operator==(const DTFecha& fecha2) const{
     bool sonIguales = false;
     if(fecha2.getAnio() == this->anio && fecha2.getMes() == this->mes && fecha2.getDia() == this->dia){
         sonIguales = true;
     }
     return sonIguales;
 }
-bool DTFecha::operator!=(const Fecha& fecha2) const{
+bool DTFecha::operator!=(const DTFecha& fecha2) const{
     bool sonDistintos = !(*this==fecha2);
     return sonDistintos;
 }
-bool DTFecha::operator<=(const Fecha& fecha2) const{
+bool DTFecha::operator<=(const DTFecha& fecha2) const{
     bool sonMenorIgual = false;
     if(*this<fecha2 || *this==fecha2){
         sonMenorIgual = true;
     }
     return sonMenorIgual;
 }
-bool DTFecha::operator>=(const Fecha& fecha2) const{
+bool DTFecha::operator>=(const DTFecha& fecha2) const{
     bool esMayorIgual = false;
     if(*this>fecha2 || *this==fecha2){
         esMayorIgual = true;
     }
     return esMayorIgual;
 }
-Fecha DTFecha::avanzar(int cantDias) const{
-    Fecha fechaAvanzada(this->dia,this->mes,this->anio);
+DTFecha DTFecha::avanzar(int cantDias) const{
+    DTFecha fechaAvanzada(this->dia,this->mes,this->anio);
     bool terminar = false;
     fechaAvanzada.dia += cantDias;
     while(!terminar){
