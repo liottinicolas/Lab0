@@ -26,7 +26,7 @@ public:
     void setCi(string ci);
     void setNombre(string nombre);
     void setEmail(string email);
-    void setParticipa(const Experiencia& experiencia_agregar);
+    void setParticipa(Experiencia* experiencia_agregar);
     std::string toString();
     std::set<std::string> listarExperiencias(DTFecha desde, float min, float max);
 };

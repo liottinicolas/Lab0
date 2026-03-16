@@ -31,16 +31,15 @@ void Turista::setNombre(string nombre){
 void Turista::setEmail(string email){
     this->email = email;
 }
-void Turista::setParticipa(const Experiencia& experiencia_agregar){
-    Experiencia* exp = (Experiencia*)&experiencia_agregar;
+void Turista::setParticipa(Experiencia* experiencia_agregar){
     if(this->participa.empty()){
-        this->participa.push_front(exp);
+        this->participa.push_front(experiencia_agregar);
     }else{
         list<Experiencia*>::iterator aux_experiencia = this->participa.begin();
-        while(aux_experiencia != this->participa.end() && experiencia_agregar.getFecha()<=(*aux_experiencia)->getFecha()){
+        while(aux_experiencia != this->participa.end() && (*experiencia_agregar).getFecha()<=(*aux_experiencia)->getFecha()){
             ++aux_experiencia;
         }
-        this->participa.insert(aux_experiencia,exp);
+        this->participa.insert(aux_experiencia,experiencia_agregar);
     }
 }
 string Turista::toString(){
