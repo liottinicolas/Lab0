@@ -5,25 +5,27 @@
 #include <set>
 #include "Experiencia.h"
 
+using namespace std;
+
 class TourGuiado : public Experiencia {
 private:
     std::string agencia;
     std::set<std::string> lugaresVisitados;
 public:
     // Constructor
-    tour(string codigoReserva, string descripcion, string agencia, <string> lugaresVisitados, int precioBase, DTFecha fecha);
+    TourGuiado(string codigoReserva, string descripcion, string agencia, set<std::string> lugaresVisitados, int precioBase, DTFecha fecha);
 
     // Destructor
-    ~tour();
+    ~TourGuiado();
 
     // Setters
     void setagencia(string agencia);
-    void setlugaresvisitados(<string> lugaresVisitados);
-    void setlugarvisitado(string lugarvisitado);
+    void setlugaresvisitados(set<std::string> lugaresVisitados);
+    void setlugarvisitado(std::string lugarvisitado);
 
     // Getters
     string getagencia();
-    <string> getlugaresvisitados();
+    set<string> getlugaresvisitados();
     bool getestalugar(string lugar);
     int getcantlugares();
 

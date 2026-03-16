@@ -1,22 +1,28 @@
 #include "TourGuiado.h"
+#include "DTFecha.h"
+#include "Experiencia.h"
+#include <set>
+#include <string>
+#include <float>
+
+using namespace std;
 
 // Constructor
-TourGuiado::tour(string codigoReserva, string descripcion, string agencia, <string> lugaresVisitados, int precioBase, DTFecha fecha)
-    :Experiencia(string codigoReserva, string descripcion, int precioBase, DTFecha fecha) {
+TourGuiado::TourGuiado(string codigoReserva, string descripcion,string agencia, set<string> lugaresVisitados, int precioBase, DTFecha fecha)
+    : Experiencia(codigoReserva, descripcion, precioBase, fecha) {
     this->lugaresVisitados = lugaresVisitados;
     this->agencia = agencia;
 }
 
 // Destructor
-TourGuiado::~tour()
-    :~Experiencia(){}
+TourGuiado::~TourGuiado(){}
 
 // Setters
-void TourGuiado::setagencia(){
+void TourGuiado::setagencia(string agencia){
     this->agencia = agencia;
 }
 
-void TourGuiado::setlugaresvisitados(){
+void TourGuiado::setlugaresvisitados(set<string> lugaresVisitados){
     this->lugaresVisitados = lugaresVisitados;
 }
 
@@ -25,7 +31,7 @@ string TourGuiado::getagencia(){
     return this->agencia;
 }
 
-<string> TourGuiado::getlugaresvisitados(){
+set<string> TourGuiado::getlugaresvisitados(){
     return this->lugaresVisitados;
 }
 
@@ -38,6 +44,6 @@ int TourGuiado:: getcantlugares(){
 }
 
 // Operación abstracta
-Float TourGuiado:: calcularCosto() override {
+float TourGuiado:: calcularCosto() override {
     return ((getPrecioBase() + 2) * getCantTuristas() * getcantlugares())
 }

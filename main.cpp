@@ -4,6 +4,7 @@
 
 #include "DTFecha.h"
 #include "DTExpe.h"
+#include "TourGuiado.h"
 #include "Turista.h"
 #include "Experiencia.h"
 #include "EventoCultural.h"
@@ -22,6 +23,7 @@ void coleccion_guardarExperiencia(Experiencia* exp){
 	std::pair<std::string, Experiencia*> entry(exp->getCodigoReserva(), exp);
     map_experiencias.insert(entry);
 }
+
 void coleccion_eliminarExperiencia(Experiencia* exp){
 	experiencias.remove(exp);
 	map_experiencias.erase(exp->getCodigoReserva());
@@ -40,7 +42,6 @@ Turista* coleccion_getTurista(std::string ci){
 Experiencia* coleccion_getExperiencia(std::string codigoReserva){
 	return map_experiencias[codigoReserva];
 }
-
 void parte_a(){
 	DTFecha f1(18, 5, 2020);
     Alojamiento* al1 = new Alojamiento("ALX5489", "Hotel moderno", 30, f1, "Hotel Lindorf", AllInclusive, 5);
@@ -113,17 +114,15 @@ void parte_g(){
     Experiencia* ec1 = coleccion_getExperiencia("ECP1346");
 
     if (vanesa && al1 && al2 && tg2 && ec1) {
-    /*  PREGUNTAR SI ESTÁ BIEN ESTO:
 	   	vanesa->setParticipa(al1); 
         vanesa->setParticipa(al2);
         vanesa->setParticipa(tg2);
-        vanesa->setParticipa(ec1);  */  
+        vanesa->setParticipa(ec1);   
     }
     
     if (karen && tg1 && tg2) {
-    /*  PREGUNTAR SI ESTÁ BIEN ESTO:
 		karen->setParticipa(tg1);
-        karen->setParticipa(tg2);  */
+        karen->setParticipa(tg2); 
     }
     
     std::cout << "Relaciones creadas exitosamente." << std::endl;
