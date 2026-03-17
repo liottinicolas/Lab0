@@ -62,5 +62,9 @@ DTExpe Experiencia::getDT() {
 }
 
 Experiencia::~Experiencia() {
+    std::set<Turista*>::iterator it;
+    for(it = participantes.begin();it != participantes.end();++it){
+        (*it)->eliminarExperiencia(this);
+    }
     this->participantes.clear();
 }
