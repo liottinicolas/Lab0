@@ -29,7 +29,7 @@ public:
     bool getestalugar(string lugar);
     int getcantlugares();
 
-    float calcularCosto() override;
+    float calcularCosto();
 };
 
 #endif

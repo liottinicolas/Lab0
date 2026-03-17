@@ -52,8 +52,9 @@ void Experiencia::vincularTurista(Turista* t) {
 // Metodos
 DTExpe Experiencia::getDT() {
     std::set<std::string> infoTuristas;
-    for (Turista* t : this->participantes) {
-        infoTuristas.insert(t->toString()); 
+    std::set<Turista*>::iterator it;
+    for (it = this->participantes.begin(); it != this->participantes.end(); ++it) {
+        infoTuristas.insert((*it)->toString()); 
     }
     return DTExpe(this->codigoReserva, this->descripcion, this->fecha, infoTuristas);
 }

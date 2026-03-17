@@ -31,7 +31,7 @@ public:
     void setregimen(TipoRegimen regimen);
     void setcantNoches(int cantNoches);
     
-    float calcularCosto() override;
+    float calcularCosto();
 };
 
 #endif
