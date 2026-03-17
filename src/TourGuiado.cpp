@@ -38,5 +38,5 @@ int TourGuiado::getcantlugares() { return this->lugaresVisitados.size(); }
 
 // Operación abstracta
 float TourGuiado::calcularCosto() {
-  return ((getPrecioBase() + 2) * getCantTuristas() * getcantlugares())
+  return ((getPrecioBase() + 2) * getCantTuristas() * getcantlugares());
 }
