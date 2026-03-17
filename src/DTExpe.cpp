@@ -1,11 +1,8 @@
 #include "DTExpe.h"
 
 // Constructor
-DTExpe::DTExpe(std::string codigoReserva, std::string descripcion, DTFecha fecha, std::set<std::string> turistas) {
-    this->codigoReserva = codigoReserva;
-    this->descripcion = descripcion;
-    this->fecha = fecha;
-    this->turistas = turistas;
+DTExpe::DTExpe(std::string codigoReserva, std::string descripcion, DTFecha fecha, std::set<std::string> turistas) 
+    : codigoReserva(codigoReserva), descripcion(descripcion), fecha(fecha), turistas(turistas) {
 }
 
 // Getters

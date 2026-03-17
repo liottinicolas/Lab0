@@ -3,20 +3,17 @@
 
 
 // Constructor
-Experiencia::Experiencia(string codigoReserva, string descripcion, int precioBase, DTFecha fecha) {
-    this->codigoReserva = codigoReserva;
-    this->descripcion = descripcion;
-    this->precioBase = precioBase;
-    this->fecha = fecha;
+Experiencia::Experiencia(std::string codigoReserva, std::string descripcion, int precioBase, DTFecha fecha) 
+    : codigoReserva(codigoReserva), descripcion(descripcion), precioBase(precioBase), fecha(fecha) {
 }
 
 // Getters
 
-string Experiencia::getCodigoReserva() const {
+std::string Experiencia::getCodigoReserva() const {
     return this->codigoReserva;
 }
 
-string Experiencia::getDescripcion() const {
+std::string Experiencia::getDescripcion() const {
     return this->descripcion;
 }
 
@@ -32,11 +29,11 @@ int Experiencia::getPrecioBase() const {
 }
 
 // Setters
-void Experiencia::setCodigoReserva(string codigoReserva) {
+void Experiencia::setCodigoReserva(std::string codigoReserva) {
     this->codigoReserva = codigoReserva;
 }
 
-void Experiencia::setDescripcion(string descripcion) {
+void Experiencia::setDescripcion(std::string descripcion) {
     this->descripcion = descripcion;
 }
 

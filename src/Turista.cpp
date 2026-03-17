@@ -41,6 +41,7 @@ void Turista::setParticipa(Experiencia* experiencia_agregar){
         }
         this->participa.insert(aux_experiencia,experiencia_agregar);
     }
+    experiencia_agregar->vincularTurista(this);
 }
 string Turista::toString(){
     string nombre_email = string(this->getCi())+"->"+string(this->getNombre())+"/"+string(this->getEmail());

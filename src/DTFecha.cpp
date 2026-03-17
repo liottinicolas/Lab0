@@ -87,18 +87,20 @@ DTFecha DTFecha::avanzar(int cantDias) const{
             }
             break;
         case 2:
-            int cantDiasBisiesto = 28;
-            if((fechaAvanzada.anio % 4 == 0 && fechaAvanzada.anio % 100 != 0) || fechaAvanzada.anio % 400 == 0 /*(fechaAvanzada->anio)%100 == 0 && (fechaAvanzada->anio)%400 != 0*/){
-                cantDiasBisiesto = 29;
-            }
-            /*if((fechaAvanzada->anio)%4 != 0){
-                cantDiasBisiesto = 29;
-            }*/
-            if(fechaAvanzada.getDia() > cantDiasBisiesto){
-                fechaAvanzada.mes++;
-                fechaAvanzada.dia = fechaAvanzada.getDia()-cantDiasBisiesto;
-            }else{
-                terminar = true;
+            {
+                int cantDiasBisiesto = 28;
+                if((fechaAvanzada.anio % 4 == 0 && fechaAvanzada.anio % 100 != 0) || fechaAvanzada.anio % 400 == 0 /*(fechaAvanzada->anio)%100 == 0 && (fechaAvanzada->anio)%400 != 0*/){
+                    cantDiasBisiesto = 29;
+                }
+                /*if((fechaAvanzada->anio)%4 != 0){
+                    cantDiasBisiesto = 29;
+                }*/
+                if(fechaAvanzada.getDia() > cantDiasBisiesto){
+                    fechaAvanzada.mes++;
+                    fechaAvanzada.dia = fechaAvanzada.getDia()-cantDiasBisiesto;
+                }else{
+                    terminar = true;
+                }
             }
             break;
         default:

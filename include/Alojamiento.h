@@ -23,11 +23,11 @@ public:
 
     ~Alojamiento();
     
-    string gethotel();
+    std::string gethotel();
     TipoRegimen getregimen();
     int getcantNoches();
 
-    void sethotel(string hotel);
+    void sethotel(std::string hotel);
     void setregimen(TipoRegimen regimen);
     void setcantNoches(int cantNoches);
     
