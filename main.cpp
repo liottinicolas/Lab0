@@ -190,7 +190,19 @@ void parte_k() {
   }
 }
 
-void cleanUp() {}
+void cleanUp() {
+  for (Experiencia *e : experiencias) {
+    delete e;
+  }
+  experiencias.clear();
+  map_experiencias.clear();
+
+  for (Turista *t : turistas) {
+    delete t;
+  }
+  turistas.clear();
+  map_turistas.clear();
+}
 
 int main() {
   std::cout << "parte_a" << std::endl;

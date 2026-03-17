@@ -61,3 +61,5 @@ set<string> Turista::listarExperiencias(DTFecha desde,float min,float max){
 void Turista::eliminarExperiencia(Experiencia* experiencia_eliminar){
     this->participa.remove(experiencia_eliminar);
 }
+
+Turista::~Turista() {}

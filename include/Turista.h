@@ -30,6 +30,7 @@ public:
     void eliminarExperiencia(Experiencia* experiencia_eliminar);
     std::string toString();
     std::set<std::string> listarExperiencias(DTFecha desde, float min, float max);
+    virtual ~Turista();
 };
 
 #endif
